@@ -15,3 +15,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Show(models.Model):
+    title=models.CharField(max_length=100)
+    platform=models.CharField(max_length=100)
+    genre=models.CharField(max_length=100)
+    score_audience=models.CharField(max_length=100)
+    score_critic=models.CharField(max_length=100)
+    img=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+    
+    

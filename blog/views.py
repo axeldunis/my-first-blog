@@ -1,5 +1,10 @@
 from django.shortcuts import render, redirect 
 from django.utils import timezone
+
+from .models import Show
+from django.http import HttpResponseRedirect
+from.forms import UploadFileForm
+import csv
 from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
@@ -38,3 +43,16 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def page_accueil(request):
+    return render(request,'blog/Page_accueil.html',{})
+
+def netflix(request):
+    return render(request,'blog/Netflix.html',{})
+
+def prime(request):
+    return render(request,'blog/Prime_video.html',{})
+
+def paramount(request):
+    return render(request,'blog/Paramount_plus.html',{})
