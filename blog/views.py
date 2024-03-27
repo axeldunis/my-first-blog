@@ -45,14 +45,18 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
-def page_accueil(request):
-    return render(request,'blog/Page_accueil.html',{})
+def home(request):
+    shows = Show.objects.all()
+    return render(request,'Home.html',{'shows':shows})
 
 def netflix(request):
-    return render(request,'blog/Netflix.html',{})
+    shows = Show.objects.all()
+    return render(request,'Netflix.html',{'shows':shows})
 
 def prime(request):
-    return render(request,'blog/Prime_video.html',{})
+    shows = Show.objects.all()
+    return render(request,'Prime_video.html',{'shows':shows})
 
 def paramount(request):
-    return render(request,'blog/Paramount_plus.html',{})
+    shows = Show.objects.all()
+    return render(request,'Paramount_plus.html',{'shows':shows})
